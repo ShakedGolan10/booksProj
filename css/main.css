@@ -1,0 +1,49 @@
+td {
+    border: 0.1px black solid;
+}
+
+
+.modal {
+    background-color: #111;
+    color: aqua;
+    padding: 10px;
+    position: absolute;
+    top: 0px;
+    left: 150%;
+    height: 20vh;
+    min-width: 300px;
+    text-align: center;
+}
+
+.modal.open {
+    left: 50px;
+    transition: left .5s;
+}
+
+.modal h3 {
+    color: pink;
+    text-decoration: overline;
+    text-transform: capitalize;
+}
+
+.modal h4 span {
+    color: pink;
+}
+
+.modal>p {
+    text-align: left;
+}
+
+.user-msg {
+    position: fixed;
+    bottom: -100px;
+    right: 10px;
+    color: azure;
+    background-color: #111;
+    padding: 10px;
+}
+
+.user-msg.open {
+    bottom: 10px;
+    transition: bottom .5s;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body onload="onInit()">
+    <section class="filter">
+        Filter by
+
+        <label>
+            Max Price:
+            <input type="range" min="1" max="100" value="6.5" class="filter-price-range"
+                onchange="this.title=this.value;onSetFilterBy({maxPrice: this.value})" />
+            Minimum Rate:
+            <input type="range" min="0" max="10" value="0" class="filter-rate-range"
+                onchange="this.title=this.value;onSetFilterBy({minRate: this.value})" />
+            Free Search:
+            <input type="text" placeholder="Enter a title" class="filter-title"
+                onchange="onSetFilterBy({title: this.value})" />
+        </label>
+    </section>
+    <br>
+    <table class="table-container">
+
+
+
+        <button onclick="onCreateNewBook()" class="create">Create new Book</button>
+        <section class="pages">
+            <button onclick="onPrevPage(event)">Previus Page</button>
+            <span class="pageNum"></span>
+            <button onclick="onNextPage()">Next Page</button>
+        </section>
+
+        <thead class="table-head">
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+
+        <tbody class="table-body">
+
+        </tbody>
+
+
+    </table>
+
+    <div class="modal">
+        <h3></h3>
+        <p></p>
+        <span class="bookId" hidden></span>
+        Book's Rate =>
+        <button onclick="onUpdateRate(this)">-</button><span class="rate"></span><button
+            onclick="onUpdateRate(this)">+</button>
+        <br>
+        <button onclick="onCloseModal()">Close</button>
+    </div>
+    <div class="user-msg"></div>
+    <script src="./js/controller.js"></script>
+    <script src="./js/services/utilities.js"></script>
+    <script src="./js/services/storage.services.js"></script>
+    <script src="./js/services/book.service.js"></script>
+
+</body>
+
+</html>
